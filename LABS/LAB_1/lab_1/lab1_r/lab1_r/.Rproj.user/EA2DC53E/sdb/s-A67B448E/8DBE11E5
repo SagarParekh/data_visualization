@@ -1,0 +1,17 @@
+{
+    "contents" : "exp(2) - log(100)  #try \"log(10000)\"\n\noutput <- 1\noutput = 2\n\nf  <-  function(x, y) \n  \n  z <- (y^2-x^2)*pi\n\n\nA <- c(1,2,3,4,5,8)\nB <- seq(10,20, by=2)\nC <- c(A,B)\n\n#exp analysis\n#scatter plot \np <- ggplot(sample, aes(winner, error)) \np + geom_point()\np <- ggplot(sample, aes(winner, error, colour=factor(victory), size=total))\n\n",
+    "created" : 1516729290578.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3035148180",
+    "id" : "8DBE11E5",
+    "lastKnownWriteTime" : 1516736903,
+    "path" : "~/Documents/2Courses/CSE591_DataVis/2018Spring/lab/lab_r/lab1_r/Sharon_Hsiao_lab1.R",
+    "project_path" : "Sharon_Hsiao_lab1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

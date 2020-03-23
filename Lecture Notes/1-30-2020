@@ -1,0 +1,16 @@
+Date: 1/30/2020
+
+Look at data's reality
+1D: your actual dataset (csv,txt,etc). Your task is to present a summary of it in viz.
+How do you put it in vizz objects to quickly understand the story.
+2D: find intersections between 2,3D by viz. Interations are pretty straightforward. IF you change x then y changes thats it.
+3D: eg. Pokemon GO. Birtual reality. Projected planes from the camera. Hard to see all the charts in reality. Augmented space helps with gestures, movements etc. How should you present it is challenging. WHat if you change x and y of the space controlled by augmented reality ? WHy do we need extra space to do image recognition project?
+Temporal: reactions during the entire event. the datastamps here are the referential data which are 1D data here. Temporal allows you to overlay it with other space. We are not just intersted in just linear events happening , temporal allows to see details of 1D data over time in space. Typically used to overlay some data over some space (typically a map) 
+Multi-dimensional: Typical way we see most data owadays. Why do we need this space to explore all this data. We want to put everything in space and figure out relation between ant two data points. Every dataset given is pretty much multidimensional. Every 2D is shown as a sub figure. Example shows the heat map which makes it more interesting. Selecting a time and day it shows a detailed bar chart representation of the same. We can recognize the relationships here by just our naked eye.
+Tree: any data with hierarchical structues with parent node and leaf nodes. 
+Network: unidentified relationships can be represented here. 
+
+Mantra: very first layer should be overview first,user will do interactions by zoom and filter, details on demand. Users will be able to relate, remember and also maybe extract even more info on interaction. 
+
+Social VIz: people also contribute to data. Example was created by crowdsourcing the names. Dynamic contribution throughout the year. COnstantly changing over time. 
+

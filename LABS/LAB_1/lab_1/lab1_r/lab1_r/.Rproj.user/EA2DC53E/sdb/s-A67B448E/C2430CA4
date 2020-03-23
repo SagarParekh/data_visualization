@@ -1,0 +1,17 @@
+{
+    "contents" : "n = c(1, 2, 3) \ns = c(\"aa\", \"bb\", \"cc\") \nb = c(TRUE, FALSE, TRUE) \ndf = data.frame(n, s, b) \n\nm = matrix(1:10,5,2)\nm\nm[4,1]\n##[1] 4\n\n# recode missing values with the mean\n# vector with missing data\nx <- c(1:4, NA, 6:7, NA)\nx\n## [1]  1  2  3  4 NA  6  7 NA\n\nx[is.na(x)] <- mean(x, na.rm = TRUE)",
+    "created" : 1516856218372.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3370231714",
+    "id" : "C2430CA4",
+    "lastKnownWriteTime" : 4251758677783211458,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

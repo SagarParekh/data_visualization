@@ -1,0 +1,66 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/lab1.css">
+	<script language="JavaScript">
+				function processClick() {
+					var buttonValue = document.getElementById('clickButton1').value;
+					alert(buttonValue);
+				}
+    </script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+	I love Dr.Hsiao & Data Vis!
+	<svg width="200" height="200">
+		<line x1="50" y1="50" x2="100" y2="100" stroke-width="10" stroke="red" />
+
+		<line x1="100" y1="100" x2="200" y2="0"  stroke-width="10" stroke="black" />
+
+	</svg>
+	<svg height="300" width="300">
+		<rect x="50" y="50" width="200" height="200" fill="grey"/>
+  		<circle cx="150" cy="150" r="80" stroke="black" stroke-width="3" fill="yellow" />
+  		<ellipse cx="115" cy="130" rx="15" ry="30" stroke="black" stroke-width="3" fill="black" />
+  		<ellipse cx="180" cy="130" rx="15" ry="30" stroke="black" stroke-width="3" fill="black" />
+  		<!-- <path d="M 70 60 C 70 80, 110 80, 110 60" stroke="black" stroke-width="3" fill="transparent"/> -->
+  		<path d="M 115 195 C 115 215, 180 215, 180 195" stroke="black" stroke-width="3" fill="transparent"/>
+  		<!-- <path d="M 120 200 L 300 300" stroke="black"/> -->
+
+	</svg> 
+	
+
+	<br><br><br>
+	<FORM NAME="myForm">
+		<INPUT TYPE="button" id="clickButton1" VALUE="this button is clicked!" onClick="processClick();">
+	</FORM>
+
+
+	<div id="viz"></div>
+	<script type="text/javascript">
+	    var svgCircle = d3.select("#viz")
+	        .append("svg")
+	        .attr("width", 200)
+	        .attr("height", 200);    
+
+		svgCircle.append("circle")
+        .style("stroke", "gray")
+        .style("fill", "white")
+        .attr("r", 40)
+        .attr("cx", 50)
+        .attr("cy", 50)
+        .on("mouseover", function(){d3.select(this).style("fill", "blue");}  )
+        .on("mouseout", function(){d3.select(this).style("fill", "white");}   );  
+
+
+	
+		d3.select("body").style("background-color","#FFCCCC");
+	</script>
+
+	<svg height="500" width="500">
+		
+		<path d="M 200 20 L 260 20 L 270 60 Q 300 70 310 80 Q 330 80 340 70 L 360 90 L 310 130 C 170 20 120 200 250 180 L 260 220 C 100 240 60 20 270 60 Q 240 50 190 60 L 200 20 L 260 20 L 270 60 Q 300 70 310 80 Q 330 80 340 70 L 360 90 L 310 130 Q 300 120 280 110 L 330 290 Q 310 310 270 310 L 250 270 L 190 270 L 170 350 Q 170 390 190 400 L 100 400 L 160 200 L 140 280 Q 200 320 270 310 Q 180 320 90 250 L 50 310 L 70 330 Q 80 310 120 330 L 100 400 L 190 400 Q 170 380 170 350 Q 230 370 280 360 Q 280 400 260 400 L 370 400 Q 350 400 340 340 C 320 350 300 360 280 360 Q 310 360 340 340 C 430 300 410 170 300 180 L 280 110 C 140 50 150 210 250 180 L 230 130 L 210 180 Q 230 190 250 180 L 260 240 L 190 240 L 200 210 Q 230 230 260 220 L 250 180 C 150 210 140 50 280 110 L 310 220 L 310 220 C 360 220 390 270 330 290 " stroke="yellow" fill="transparent" stroke-width="4">
+	</svg>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "contents" : "x <- c(1,2,3,4, NA, 6:7, NA)\nx\n\nis.na(x)\n\n",
+    "created" : 1516903357251.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2451860774",
+    "id" : "7BEC2A79",
+    "lastKnownWriteTime" : 8100069427454243681,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

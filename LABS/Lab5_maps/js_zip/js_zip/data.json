@@ -1,0 +1,79 @@
+{
+    "data": [
+        {
+            "CTYNAME": "Maricopa County",
+            "Pop": 4410824,
+            "GrowthRate": "15.3099"
+        },
+        {
+            "CTYNAME": "Pima County",
+            "Pop": 1039073,
+            "GrowthRate": "5.8493"
+        },
+        {
+            "CTYNAME": "Pinal County",
+            "Pop": 447138,
+            "GrowthRate": "17.8083"
+        },
+        {
+            "CTYNAME": "Yavapai County",
+            "Pop": 231993,
+            "GrowthRate": "9.9581"
+        },
+        {
+            "CTYNAME": "Yuma County",
+            "Pop": 212128,
+            "GrowthRate": "7.6038"
+        },
+        {
+            "CTYNAME": "Mohave County",
+            "Pop": 209550,
+            "GrowthRate": "4.6102"
+        },
+        {
+            "CTYNAME": "Coconino County",
+            "Pop": 142854,
+            "GrowthRate": "6.1181"
+        },
+        {
+            "CTYNAME": "Cochise County",
+            "Pop": 126770,
+            "GrowthRate": "-3.8324"
+        },
+        {
+            "CTYNAME": "Navajo County",
+            "Pop": 110445,
+            "GrowthRate": "2.5526"
+        },
+        {
+            "CTYNAME": "Apache County",
+            "Pop": 71818,
+            "GrowthRate": "-0.0195"
+        },
+        {
+            "CTYNAME": "Gila County",
+            "Pop": 53889,
+            "GrowthRate": "0.5936"
+        },
+        {
+            "CTYNAME": "Santa Cruz County",
+            "Pop": 46511,
+            "GrowthRate": "-1.9169"
+        },
+        {
+            "CTYNAME": "Graham County",
+            "Pop": 38072,
+            "GrowthRate": "2.4570"
+        },
+        {
+            "CTYNAME": "La Paz County",
+            "Pop": 21098,
+            "GrowthRate": "2.9321"
+        },
+        {
+            "CTYNAME": "Greenlee County",
+            "Pop": 9483,
+            "GrowthRate": "13.8142"
+        }
+    ]
+}

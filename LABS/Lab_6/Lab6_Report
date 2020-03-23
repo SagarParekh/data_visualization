@@ -1,0 +1,16 @@
+What is the betweenness value of provided data (greys anatomy sexual relationship network)? What does it mean? 
+
+The betweenss value provides by the data is:
+[1]  36.00000  60.00000 115.36667  67.15000  17.95000  95.26667  54.41667  43.00000
+[9]  46.86667   3.00000   4.00000   0.00000   1.00000  47.95000  76.00000   0.00000
+[17]   0.00000   0.00000   0.00000  44.08333   0.00000   4.95000   0.00000   0.00000
+[25]   3.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+
+THe above betweeness values are for the following people respectively:
+lexi         owen        sloan       torres        	derek        karev     o'malley 
+yang         grey        chief   	ellis grey   	susan grey   bailey    izzie 
+altman      arizona      colin      preston       	kepner       addison   nancy 
+olivia mrs. seabury      adele  	thatch grey     tucker       hank      denny 
+finn        steve        ben        avery
+
+Betweenness centrality measures how important a node is to the shortest paths through the network. By the obtained betweeness we can see that sloan is the most important node in terms of betweeness.

@@ -1,0 +1,97 @@
+3/17/2020 
+
+Why do we need text viz?
+- Lots of content outside which are not compiled together. So there is a lot of text out there. 
+- Efficiently need to acquire and display information. If we can represent the text data vizually it becomes more important.
+
+WordSeer:
+- A Text Analysis Environment for Humanities Scholars
+- WordSeer is a text analysis environment that combines visualization, information retrieval, sensemaking and natural language processing to make the contents of text navigable, accessible, and useful
+
+Citeology:
+- Citeology looks at the relationship between research publications through their use of citations. The names of each of the 3,502 papers published at the CHI and UIST Human Computer Interaction (HCI) conferences between 1982 and 2010 are listed by year and sorted with the most cited papers in the middle. In total, 11,699 citations were made from one article to another within this collection. These citations are represented by the curved lines in the graphic, linking each paper to those that it referenced.
+
+We feel fine project:
+
+Dating websites: 
+- building reccomendations, matching problem is applicable to many other concepts. 
+- based on a profile.
+- lots of factors to be matched.
+- not just about matching the meta data of different people.
+- you are hoping to extract the meaning outside the given metadata and then connect users.
+
+foodmood.in:
+
+Pulse of the Nation:
+- mood throughout the day, as inferred from twitter.
+- sentiment analysis from tweets.
+
+Text viz:
+- may converted to numbers
+- may converted to viz
+- you may spend a lot of time processing the data, decide the viz, but a powerful title, text, summary is needed to append to the vizualization. 
+- transform text info into visual forms
+
+How to convert text to viz:
+- words:
+- sentences:
+- documents:
+- relationships:
+
+What are effective Text Viz:
+- content linguistic structure: 
+- content semantics: sentiment analysis are trying to highlight this
+- content similarities: harder to relate, there are no such things that tell you which posts are similar to each other, easiest to compute but harder to project,
+- content connections:
+- content evolution:
+- improve text searches
+- innovations: 
+
+What to visualize?
+- Single document viz:
+- Document collection viz:
+- Extended document viz: 
+
+People are willing to contribute to textual content:
+- reviews
+- twitter
+
+Machine Learning: Classification techniques:
+- Supervised appreach
+- Unsupervised approach
+
+Aggregate the network viz to help to explore and identify the relations:
+
+Sentiment viz:
+- Sentiment polarity: love <-> hate, thumbs up <-> thumbs down, positive <-> negative. Use sentiment library to annotate and find if text belongs to either of the two extremes?
+- Color and vizual elements to represent and highlight the differences.
+- Affective words, aspect-specific matter! We can cumulate and transform the text to numbers but this is very naive appraoch (lexicon based). We need to improve potential guarantee. It is challenging. One of the challenges is the domain specific words. eg small etc. 
+- Indexing words,
+- More challenges: noun and verb connotation, multi-word expressions. 
+- scoring words, phrases, etc with the help of a dictionary.
+- Approaches:
+	- Lexicon based: word by word assign positive or negative value to all words and form a dictionary. 
+	- Rule-based:
+	- Machine Learning: takes into account any possible features. 
+	- Hashtags, emoticons
+- Challenges from using twitter tweets:
+	- Short and incomplete
+	- sentences, not documents
+	- words can be fuzzy, confusing, abbreviations, informal, compound words etc.
+	- cross language mix model
+	- implicit sentiment eg: sarcasm, irony, metaphor.
+
+Test Processing:
+- Lexicon Analysis:
+- Extract Terms: use only some 
+- Remove Stop words: removing filler words which do not change the meaning of the sentence. like conjunction words, punctuations etc (a, an, the, etc)
+- Stemming: standard form of all words to unify all the words and make them singular.
+- Term Selection: 
+
+Topic Modeling:
+- trying to model the topics. Off the shelf libraries, algos which you cna find everywhere.
+- documents that have structure.
+- LDA: 
+- Topic Facet Modeling: 
+
+

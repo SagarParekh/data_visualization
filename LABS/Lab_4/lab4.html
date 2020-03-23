@@ -1,0 +1,86 @@
+<!-- CSE 578: Data Vizualization (Spring 2020)
+Sagar Parekh 1213332118
+-->
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="d3-transform.js"></script>
+</head>
+<body>
+	<h1> D3 Tutorial III </h1>
+	<div id = "viz"></div>
+</body>
+
+<!-- 
+<script>
+	//2.1
+	// var svgCircle = d3.select("#viz").append("svg")
+	// .attr("width", 600) .attr("height", 300)
+	// .style("fill","yellow").style("stroke","black");
+
+	// var canvas=svgCircle.append("g");
+
+	// var c1 = canvas.append("circle").attr("r", 20)
+ //    .attr("cx", 50)
+ //    .attr("cy", 50);
+
+ //    var c2 = canvas.append("circle").attr("r", 20)
+ //    .attr("cx", 100)
+ //    .attr("cy", 50);
+
+ //    var c3 = canvas.append("circle").attr("r", 20)
+ //    .attr("cx", 150)
+ //    .attr("cy", 50);
+
+    //2.2
+    // canvas.attr("transform","translate(30,0)");
+
+    //2.3
+    // canvas.attr("transform","scale(2)");
+
+    //2.4
+    // canvas.transition().attr("transform","rotate(30)");
+
+    //2.5
+    // c3.transition().attr("transform","rotate(30)"); 
+</script>
+-->
+
+
+<script>
+
+	var svgCircle = d3.select("#viz").append("svg").attr("width", 600) .attr("height", 600)
+	var canvas=svgCircle.append("g");
+	var circleData = [
+	   { "cx": 50, "cy": 50, "r": 20, "color" : "yellow" , "stroke":"black"},
+	   { "cx": 100, "cy": 50, "r": 20, "color" : "lightblue" , "stroke":"black"},
+	   { "cx": 150, "cy": 50, "r": 20, "color" : "pink", "stroke":"black" }
+    ];
+
+	var circles = canvas.selectAll("circle")
+			        .data(circleData)
+			        .enter()
+			        .append("circle");
+                        
+	var circleAttributes = circles
+	  .attr("cx", function (d) { return d.cx; } )
+	  .attr("cy", function (d) { return d.cy; } )
+	  .attr("r", function (d) { return d.r; } )
+	         .style("fill", function (d) { return d.color; } )
+	         .style("stroke", function (d) { return d.stroke; } );
+
+	var x = d3.scale.linear().domain([0,400]).range([0,400]);
+	var xAxis = d3.svg.axis().scale(x).orient("bottom");
+
+	canvas.append("g")
+           .attr("class", "axis")
+           .call(xAxis);
+
+    var y = d3.scale.identity().domain([0,300]);
+    var yAxis = d3.svg.axis().scale(y).orient('right');
+ 
+    canvas.append("g")  
+                .attr("class", "axis")
+                .call(yAxis);
+
+</script>

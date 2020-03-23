@@ -1,0 +1,72 @@
+02-18-2002 MAPS
+
+Normalizations: How do we deal with it to present and interpret data in an area (maps)? 
+
+Maps give us oerview of general area and an overview of general idea. Zoom and filter help us to see different levels of information.
+
+Once you are oriented around the landmarks we can look into the details then?
+
+Making a mental map of the direction you are travelling and comparing it to real world? 
+
+Orientation ability: how our brains rotate when we look at the map? how we tell ourselfs to follow the direction? There is a compass on the maps to tell us the direction we are moving towards: north, south etc.
+Varies from individual to individual. Affects the way how we find way. Our perception makes the difference of how we perceive it. 
+
+Spatial Ability: mentally manipulate 2D and 3D objects.
+Its the capacity to unerstand and remember the spatial relations among objects.
+
+
+
+Visual Image vs Verbal Image:
+How the readers interpret? This is how. THey use these two things. 
+Look at the visual information, you remember the glimps of the shape and their orientation. 
+We try to remember the visual info as a sequence of objects but we dont connect it the type of objects and the properties of objects.
+
+Effects of Spatial Ability:
+
+
+
+Our attention/focus need to be summariezed. 
+
+Multidimensional information could fill in the gap between individual difference and various needs and contexts.
+How do we have one that fits all? 
+We can implement something like this when making spatial vizualisations. 
+THere is very small room of error.
+
+Multidimensional viz is not always the best solution. 
+Why not give them a 3D view for more information. But it turns out the cost of reaction time makes it ambiguous to infer. 
+
+3D bar chart is not easy to understand. Still you need 2D bar chart for precise comparisons.
+
+how do we remember the locations and the spaces around us?
+- Landmark knowledge: salient and recognizable objects
+- Route knowledge: consist of sequences of landmarks
+- Survey knowledge: built by personal experience through exploration, represent distance and relationships among landmarks
+
+It can also be a combination of these for better understanding. These cognitive maps attach the sentiments to it based on an individual's background.
+
+Combination of linear and spatial way gives the user personalization feel.
+
+Today, we get and estimated generalized and interpretation of true geographic conditions. 
+The map is trying to make it more universal and also comprehensible of all information.
+
+Universal language of thoughts and how we perceive so we can make an aproximation without actually knowing the language.
+
+How to reconstruct the map. Connect all info we have. 
+Information retieval. Ranking, mapping etc. 
+aka: Information systems. eg: Dewey decimal system
+
+Map can be built into multi-views. 
+It also matters individually and is different for all. 
+How do we create a map which everyone can understand. Make it more catered for the users.
+
+Entity workspace: combination of all entities and their connections. Each piece of evidence can be extracted and connected. The metadata can establish links between all the evidence. 
+
+Geographic Profiling: The condensed heat map density view will show those evidence freq based upon how those events happened. 
+
+we dont read maps when they are very comples. we need interactions to find precise info.
+Presenting info 
+Exploring info: to leave the users the path to explore new stuff. 
+
+Mashup: see maps and text data side by side.
+eg: Craiglist: gives aggregate information .Heat map, density map. 
+

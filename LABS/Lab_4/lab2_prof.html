@@ -1,0 +1,124 @@
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+	<h2>CSE 578 Data Visualization</h2>
+
+	<p>test1!!!</p>
+
+	<div id="viz"></div>
+
+	<script>
+	//1.0. change background to grey
+	/*
+	d3.select("body").style("background-color","#D8D8D8");
+	
+	//1.1. change title to blue
+	d3.select('h2').style("color","purple");
+
+	//1.2. change title to a random color
+	*/
+	d3.select('h2').style("color", function() {
+  		return "hsl(" + Math.random() * 120 + ",100%,70%)";
+	});
+	
+
+	//1.3. change text
+	d3.select('h2').text("what?!");
+
+
+	//1.4.1. enter bounded data
+	
+	d3.select("body").selectAll("p")
+    	.data([4, 9, 15, 16, 23, 42])
+  		.enter().append("p")
+    	.text(function(d) { return d; });
+
+	
+	//1.4.2. alternative way to enter data
+/*
+	var p = d3.select("body").selectAll("p")
+    .data([4, 8, 15, 16, 23, 42])
+    .text(String);
+		
+	// Enter
+	p.enter().append("p").text(String);
+
+	// Exit
+	p.exit().remove();
+*/
+
+
+    //1.5. create alternate shades of gray for even and odd nodes
+	/*
+	d3.selectAll("p").style("color", function(d, i) {
+		  return i % 2 ? "#FFFFFF" : "#58ACFA";
+	}).style("font-weight", "bold");
+	*/
+
+
+	//2.0 create a canvas and append a svg circle.
+
+	var svgCircle = d3.select("#viz").append("svg")
+	.attr("width", 600) .attr("height", 300);
+
+	var circle = svgCircle.append("circle").style("stroke", "gray").style("fill", "white").attr("r", 10)
+	    .attr("cx", 50)
+	    .attr("cy", 50);
+
+	var c2 = svgCircle.append("circle").style("stroke", "gray").style("fill", "blue").attr("r", 10)
+	    .attr("cx", 150)
+	    .attr("cy", 150); 
+
+	//2.1 move the circle to the right
+	
+	circle.transition()
+		.attr("cx", 150);
+	
+
+
+	//2.2 change some behavior, duration, delay 
+	
+	c2.transition()
+		.delay(500)
+		.attr("cx", 250)
+		.duration(2000);
+	
+
+	//2.3 multiple transitions
+	
+	circle.transition()
+		.attr("cx", 250)
+		.duration(2000)
+		.transition()
+		.attr("cy", 280);
+	
+
+	//2.4  integrating transition and events 
+	
+	circle.transition()
+		.attr("cx", 250)
+		.duration(2000)
+		.each("end",function(){ d3.select(this).style("fill","#FF8000"); });
+	
+	//2.5 transit during events
+	
+	c2.transition()
+		.attr("cx", 350)
+		.duration(2000)
+		.each(function(){ d3.select(this).transition().duration(1000).style("fill","#FF8000"); });
+	
+    </script>
+    <script>
+    	function move(){
+    		var circleX = d3.select("circle").attr("cx"); //currentcx value
+			circle.transition()
+				.attr("cx", circleX*150*0.01);
+			}
+    </script>
+    <form>
+    	<input type="button" value="move" onclick="move();">
+    </form>
+</body>
+</html>

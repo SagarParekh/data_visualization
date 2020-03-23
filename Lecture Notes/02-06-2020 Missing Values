@@ -1,0 +1,38 @@
+02-06-2020 Missing Values
+
+IF you do not consider missing values you have already started with a wrong assumption
+
+Why do we care?
+1. Diagonose the cause of missingness
+2. Might affect the estimation
+
+BEfore  you do anything:
+1. Step 1: observe the missingness.
+		- Completely random: Just throw out the cases
+		- Random: create a new variable to model it
+		- Not Random: find the cause
+2. Step 2: Decide on best analysis strategy to yeild the least biased estimates
+		- Deletion
+		- Single Imputation
+		- Model Based
+
+Types:
+1. Listwise Deletion:-
+2. Pairwise Deletion:- 
+3. Imputation	- mean/mode substitution
+				- complete case analysis
+				- reduces the variability
+				- weakens the covariance and correlation estimation
+4. Dummy Variable creation:	- indicator for missing value
+							- complete case analysis
+							- gives biased results
+							-
+5. Regression Imputation:	- prediction
+							- info from observed data
+							- overestimates model fit
+							- weakens variation
+6. Maximum Lilelihood Imputation:	- produce highest log-likelihood
+									- consider observations/ independent variables
+									- take into account the info you know so not so biased
+									- missing variability so harder to have conclusive result
+									- might need adjustments to reduce the bias

@@ -1,0 +1,61 @@
+02/04/2020: Principal and Design
+
+you need to rely on some tools to help you design the viz
+THe wall is more ambiguous today
+
+We are all designers and not just programmers. 
+memes can be programmable
+
+we spend most time being users but spend less time being designers
+CT scan shows different density in different cases. The viz helps to show this
+
+we change priority in applying colors. In kisses case we use categorical numbers in sequential collors
+
+use perception rules to guide the design process
+we know qas users how to interpret it 
+keep in mind
+by perception rules: the brain does not tell you but you just recognize them
+it includes : we have to understand data type (7 types) and recognize viz tasks
+and lastly other design choices made by the user
+
+Data Ink ratio: Tufte. More standard way. 
+Minimalistic bar chart. Focus on the data and not the rest of the stuff
+Left chart uses extra ink for background. If you can minimize it, we can focus more on the data.
+But people like colors. People like eye appeasing engagement with the user.
+
+Underground london tunner. Different color shows different trains. 
+London tube line. The thyme river is usefull because it gives reference to west and east bank
+SOme landmarks are references for users to understand what is where.
+
+A) just users different colors for different trains. But headed in same dirrection.
+B) Different trains but on same line. So use shades of green .
+C) Sequential colors use a lot of space. Rather use the space to display more info. C combined all trains in same direction in one line. 
+Vary differently based on visual elements
+
+NEed to consider the domain in designing.
+Look in to literature
+Know the limits you can display
+need key elements to improve the already available.
+Practive makes you read better. 
+
+SOmetimes we need cheat sheets to understand the trends, the qualities, the scheme we need to understand to read the viz
+DIrections make it easier for viewer to know where to look at. 
+
+Wow factors are created by all but need to use it properly to have a wow effect. 
+
+Point of interests are highlighted. The technique is simple. No extra stuff. Generalization improve clarity. BEcause only imp details are emphasised. 
+Balance the two: 
+Manipulate the pereption and communicate intent of viz.
+
+Human subject experiments. User studies. To understand how user thinks. 
+
+															02-06-2020 Continue
+
+Guidelines:
+too complex? Problem if the audience is novice
+too abstract? present the functions sequentially and then communicate the combinations of those functions in a conceptual way
+too boring? is this done already? need something new?
+
+(wine and food) Cool but not good enough. BEcause, this is not a scientific sound improvement. Line gets misstranslated in the middle. More sequential way of presenting a kind of a network. 
+(networks) Network view is also complicated when a lot of nodes and links are present. 
+(think not a designer) CHart suggestions - A thought starter. 

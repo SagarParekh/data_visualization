@@ -1,0 +1,43 @@
+3/3/2020 Gephi
+
+Social network viz. Hoping to find out undefined connections. 
+DV delivers somewhat unexpected. Connect memories and bring in all the readers. 
+
+Make the complex things simple, divide big data in small groups, handle them and find out relations.
+
+try to interpret data variable and try to filter them and then parse. Present it and if not satisfied then go over the previous stages again. Refine it and try to make it better. All these stages need different set of skills. 
+
+How to appreach it more systematically. Different levels: macro and micro which can be seen as local and global. Now lets group it by dimensions so as to sort the messy data. YOu can also sort the data by timestamp.
+
+First level is overview. Zoomm in and out for orderness. In stats we look at certain data called the qualitative data: social, semantic , geographic. 
+in quantitative data you can find groups and connections within them. IF there are connections then you can represent by linked nodes to describe the patterns. 
+
+WHat is a network?
+
+One more layers of entities which can be any objects.
+
+Network encoding: how we transform representations into code. Vertices are the nodes, edges will be the connections between a pair. 
+Types of network encoding.
+Organise the data in a systematic way.
+
+Math repreentations: Tabular form. (Matrix)
+The thickness of the connections depend on the weights.
+Decompose the matrix to understand further. Math helps to viz the patterns. 
+
+Easy to convert table - matrix - network.
+The goal is to understand the undefined relations.
+
+basic guidelines on what ot focus depends on number of nodes:
+1-100: discuss semnatics, discuss meanings of the relations.
+100-1000: focus on particular attributes, explain their structure, 
+1000-50000: how the structure explains attributes.
+>50000: more computational power to zoom in, algo to filter the nodes,
+
+Goals of the network:
+
+Types of networks:
+
+Measures:
+
+
+

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+  .arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+  }
+
+  .arc path {
+    stroke: #fff;
+  }
+
+  div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 60px;          
+    height: 28px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: lightsteelblue; 
+    border: 0px;    
+    border-radius: 8px;     
+    pointer-events: none;     
+}
+
+.axis .domain {
+display: none;
+}
+
+</style>
+<body>
+  
+  <svg id="pie_chart" width=52% height=500 style="margin-left: -120px"></svg>
+  <svg id="comparative_bar_chart" width="600" height="500" style="margin-left: 100px"></svg>
+  <div style="margin-top: 1%; position: absolute; top:0; margin-left:35%" >
+    <label>Select a country: </label><select id="example-select"></select>
+  </div>
+  <script src="http://d3js.org/d3.v2.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script>
+
+    var country1, country2;
+
+    var myobject = {'ESP': {'players': {'Rafael Nadal': 49, 'Fernando Verdasco': 29, 'Tommy Robredo': 29, 'Nicolas Almagro': 24, 'David Ferrer': 43, 'Marcel Granollers': 11, 'Guillermo Garcia-Lopez': 19, 'Albert Montanes': 14, 'Feliciano Lopez': 25, 'Oscar Hernandez': 7, 'Juan Carlos Ferrero': 21, 'Carlos Moya': 6, 'Daniel Gimeno-Traver': 7, 'Pere Riba': 4, 'Ruben Ramirez-Hidalgo': 4, 'Pablo Andujar': 7, 'Roberto Bautista-Agut': 7, 'Albert Ramos': 3, 'Adrian Menendez-Maceiras': 1, 'Daniel Munoz-De La Nava': 1, 'Arnau Brugues-Davi': 1, 'Albert Costa': 4, 'Alex Corretja': 2, 'Santiago Ventura': 3, 'Alex Calatrava': 1, 'Alberto Martin': 5, 'Felix Mantilla': 2, 'David Sanchez-Munoz': 3, 'Fernando Vicente': 1, 'Ivan Navarro': 1, 'Galo Blanco': 2, 'Albert Portas': 1, 'Pablo Carreno-Busta': 1}, 'player_count': 338}, 'SUI': {'players': {'Roger Federer': 70, 'Stanislas Wawrinka': 30, 'Marco Chiudinelli': 3, 'Michael Lammer': 1}, 'player_count': 104}, 'USA': {'players': {'Andy Roddick': 41, 'James Blake': 24, 'Mardy Fish': 19, 'Wayne Odesnik': 5, 'Vince Spadea': 9, 'John Isner': 13, 'Donald Young': 9, 'Taylor Dent': 10, 'Rajeev Ram': 4, 'Robby Ginepri': 12, 'Ryan Harrison': 6, 'Sam Querrey': 17, 'Michael Russell': 9, 'Ryan Sweeting': 4, 'Denis Kudla': 2, 'Alex Kuznetsov': 3, 'Tim Smyczek': 3, 'Brian Baker': 2, 'Rhyne Williams': 2, 'Steve Johnson': 2, 'Andre Agassi': 11, 'Todd Martin': 3, 'Jeff Morrison': 2, 'Bobby Reynolds': 7, 'Kevin Kim': 6, 'Jan-Michael Gambill': 3, 'Justin Gimelstob': 2, 'Paul Goldstein': 3, 'Zack Fleishman': 3, 'Robert Kendrick': 3, 'Brian Wilson': 1, 'Sam Warburg': 2, 'Glenn Weiner': 2, 'Jeff Salzenstein': 1, 'Brian Vahaly': 1, 'Jack Sock': 2, 'Bradley Klahn': 1}, 'player_count': 249}, 'FRA': {'players': {'Gilles Simon': 22, 'Jo-Wilfried Tsonga': 35, 'Gael Monfils': 25, 'Richard Gasquet': 28, 'Fabrice Santoro': 17, 'Sebastien de Chaunac': 3, 'Arnaud Clement': 10, 'Jeremy Chardy': 12, 'Paul-Henri Mathieu': 13, 'Florent Serra': 13, 'Adrian Mannarino': 7, 'Stephane Robert': 8, 'Michael Llodra': 14, 'Marc Gicquel': 8, 'Julien Benneteau': 16, 'Sebastien Grosjean': 19, 'Guillaume Rufin': 3, 'David Guez': 2, 'Benoit Paire': 7, 'Nicolas Mahut': 11, 'Vincent Millot': 3, 'Edouard Roger-Vasselin': 8, 'Kenny de Schepper': 3, 'Eric Prodon': 1, 'Josselin Ouanna': 1, 'Olivier Patience': 6, 'Nicolas Escude': 3, 'Cyril Saulnier': 4, 'Thierry Ascione': 4, 'Gregory Carraz': 3, 'Jerome Haehnel': 1, 'Antony Dupuis': 2, 'Olivier Mutis': 2, 'Jean-Christophe Faurel': 2, 'Nicolas Devilder': 2, 'Mathieu Montcourt': 1, 'Jerome Golmard': 2, 'Lucas Pouille': 1}, 'player_count': 322}, 'ARG': {'players': {'Juan Martin Del Potro': 25, 'Guillermo Canas': 10, 'Brian Dabul': 3, 'David Nalbandian': 29, 'Eduardo Schwank': 3, 'Martin Vassallo Arguello': 4, 'Juan Monaco': 16, 'Juan Ignacio Chela': 18, 'Jose Acasuso': 6, 'Horacio Zeballos': 3, 'Leonardo Mayer': 6, 'Carlos Berlocq': 8, 'Guido Pella': 1, 'Guillermo Coria': 8, 'Gaston Gaudio': 9, 'Mariano Zabaleta': 4, 'Agustin Calleri': 9, 'Sergio Roitman': 2, 'Diego Hartfield': 1, 'Juan-Pablo Brzezicki': 1, 'Diego Junqueira': 1, 'Federico Delbonis': 1}, 'player_count': 168}, 'SRB': {'players': {'Novak Djokovic': 49, 'Viktor Troicki': 11, 'Janko Tipsarevic': 21, 'Boris Pashanski': 3, 'Ilija Bozoljac': 2, 'Dusan Lajovic': 2}, 'player_count': 88}, 'CHI': {'players': {'Fernando Gonzalez': 23, 'Nicolas Massu': 7, 'Paul Capdeville': 4}, 'player_count': 34}, 'GBR': {'players': {'Andy Murray': 42, 'James Ward': 1, 'Jamie Baker': 2, 'Tim Henman': 7, 'Greg Rusedski': 3, 'Alan Mackin': 1}, 'player_count': 56}, 'CRO': {'players': {'Marin Cilic': 24, 'Mario Ancic': 16, 'Ivo Karlovic': 19, 'Ivan Ljubicic': 20, 'Roko Karanusic': 5, 'Ivan Dodig': 10, 'Antonio Veic': 2}, 'player_count': 96}, 'CZE': {'players': {'Tomas Berdych': 40, 'Radek Stepanek': 21, 'Jan Hernych': 8, 'Jan Hajek': 6, 'Lukas Rosol': 4, 'Jiri Novak': 3, 'Michal Tabara': 3, 'Bohdan Ulihrach': 4, 'Tomas Zib': 3, 'Pavel Snobel': 1, 'Ivo Minar': 3, 'Robin Vik': 1, 'Jiri Vanek': 3, 'Lukas Dlouhy': 4, 'Jan Vacek': 2, 'Jiri Vesely': 1}, 'player_count': 107}, 'CYP': {'players': {'Marcos Baghdatis': 32}, 'player_count': 32}, 'RUS': {'players': {'Igor Andreev': 16, 'Marat Safin': 22, 'Mikhail Youzhny': 21, 'Igor Kunitsyn': 7, 'Nikolay Davydenko': 32, 'Teimuraz Gabashvili': 7, 'Dmitry Tursunov': 13, 'Alex Jr. Bogomolov': 7, 'Alexander Kudryavtsev': 1, 'Evgeny Donskoy': 3, 'Andrey Kuznetsov': 2}, 'player_count': 131}, 'ISR': {'players': {'Dudi Sela': 12, 'Amir Weintraub': 2, 'Harel Levy': 2}, 'player_count': 16}, 'AUT': {'players': {'Jurgen Melzer': 23, 'Stefan Koubek': 10, 'Daniel Koellerer': 1, 'Oliver Marach': 2, 'Werner Eschauer': 1, 'Martin Slanar': 1, 'Dominic Thiem': 2}, 'player_count': 40}, 'GER': {'players': {'Tommy Haas': 22, 'Michael Berrer': 10, 'Andreas Beck': 3, 'Philipp Kohlschreiber': 26, 'Florian Mayer': 22, 'Benjamin Becker': 10, 'Rainer Schuettler': 11, 'Dieter Kindlmann': 3, 'Mischa Zverev': 6, 'Simon Greul': 3, 'Daniel Brands': 4, 'Philipp Petzschner': 5, 'Denis Gremelmayr': 7, 'Bjorn Phau': 9, 'Simon Stadler': 1, 'Tobias Kamke': 6, 'Dustin Brown': 1, 'Cedrik-Marcel Stebe': 2, 'Matthias Bachinger': 1, 'Peter Gojowczyk': 2, 'Julian Reister': 2, 'Lars Burgsmuller': 4, 'Nicolas Kiefer': 9, 'Tomas Behrend': 2, 'Alexander Waske': 2, 'Alexander Popp': 1, 'Jan-Lennard Struff': 1}, 'player_count': 175}, 'TPE': {'players': {'Yen-Hsun Lu': 17, 'Jimmy Wang': 4}, 'player_count': 21}, 'BIH': {'players': {'Amer Delic': 9, 'Damir Dzumhur': 3}, 'player_count': 12}, 'LUX': {'players': {'Gilles Muller': 11}, 'player_count': 11}, 'UZB': {'players': {'Denis Istomin': 15, 'Vadim Kutsenko': 1}, 'player_count': 16}, 'ITA': {'players': {'Fabio Fognini': 11, 'Flavio Cipolla': 6, 'Simone Bolelli': 6, 'Potito Starace': 7, 'Paolo Lorenzi': 3, 'Andreas Seppi': 16, 'Marco Crugnola': 1, 'Filippo Volandri': 10, 'Matteo Viola': 1, 'Davide Sanguinetti': 4, 'Daniele Bracciali': 4, 'Federico Luzzi': 3, 'Alessio di Mauro': 1, 'Andrea Stoppini': 1}, 'player_count': 74}, 'LAT': {'players': {'Ernests Gulbis': 8}, 'player_count': 8}, 'ROU': {'players': {'Victor Hanescu': 15, 'Andrei Pavel': 10, 'Adrian Ungur': 1, 'Razvan Sabau': 1}, 'player_count': 27}, 'AUS': {'players': {'Chris Guccione': 8, 'Brydan Klein': 3, 'Bernard Tomic': 15, 'Lleyton Hewitt': 32, 'Carsten Ball': 3, 'Colin Ebelthite': 1, 'Marinko Matosevic': 5, 'Nick Lindahl': 2, 'Matthew Ebden': 6, 'Jason Murray Kubler': 1, 'Peter Luczak': 10, 'James Duckworth': 5, 'Greg Jones': 1, 'Benjamin Mitchell': 2, 'Luke Saville': 1, 'John-Patrick Smith': 1, 'John Millman': 1, 'Mark Philippoussis': 5, 'Todd Reid': 4, 'Wayne Arthurs': 7, 'Nathan Healey': 5, 'Marc Kimmich': 2, 'Paul Baccanello': 1, 'Scott Draper': 1, 'Robert Smeets': 3, 'Alun Jones': 4, 'Joseph Sirianni': 1, 'Samuel Groth': 2, 'Todd Larkham': 1, 'Thanasi Kokkinakis': 2, 'Nick Kyrgios': 2, 'Jordan Thompson': 1}, 'player_count': 138}, 'SWE': {'players': {'Robin Soderling': 11, 'Joachim Johansson': 8, 'Thomas Enqvist': 4, 'Thomas Johansson': 12, 'Jonas Bjorkman': 5, 'Jacob Adaktusson': 1, 'Bjorn Rehnquist': 2}, 'player_count': 43}, 'SVK': {'players': {'Dominik Hrbaty': 17, 'Lukas Lacko': 11, 'Karol Beck': 7, 'Martin Klizan': 4, 'Karol Kucera': 2}, 'player_count': 41}, 'BEL': {'players': {'Xavier Malisse': 15, 'Steve Darcis': 4, 'Christophe Rochus': 7, 'Kristof Vliegen': 8, 'Olivier Rochus': 14, 'Ruben Bemelmans': 1, 'David Goffin': 1, 'Maxime Authom': 1, 'Dick Norman': 2}, 'player_count': 53}, 'KAZ': {'players': {'Evgeny Korolev': 8, 'Andrey Golubev': 7, 'Mikhail Kukushkin': 7, 'Aleksandr Nedovesov': 1}, 'player_count': 23}, 'CAN': {'players': {'Frank Dancevic': 6, 'Peter Polansky': 1, 'Milos Raonic': 14, 'Jesse Levine': 5, 'Vasek Pospisil': 2}, 'player_count': 28}, 'ECU': {'players': {'Nicolas Lapentti': 6}, 'player_count': 6}, 'UKR': {'players': {'Sergiy Stakhovsky': 9, 'Ivan Sergeyev': 2, 'Illya Marchenko': 5, 'Alexandr Dolgopolov': 11}, 'player_count': 27}, 'POL': {'players': {'Lukasz Kubot': 8, 'Michal Przysiezny': 3, 'Jerzy Janowicz': 6}, 'player_count': 17}, 'COL': {'players': {'Alejandro Falla': 13, 'Santiago Giraldo': 8, 'Alejandro Gonzalez': 1}, 'player_count': 22}, 'BRA': {'players': {'Thomaz Bellucci': 10, 'Ricardo Hocevar': 1, 'Marcos Daniel': 4, 'Ricardo Mello': 6, 'Joao Souza': 1, 'Gustavo Kuerten': 3, 'Flavio Saretta': 2}, 'player_count': 27}, 'TUR': {'players': {'Marsel Ilhan': 3}, 'player_count': 3}, 'FIN': {'players': {'Jarkko Nieminen': 24}, 'player_count': 24}, 'IRL': {'players': {'Louk Sorensen': 2}, 'player_count': 2}, 'POR': {'players': {'Frederico Gil': 6, 'Rui Machado': 2, 'Joao Sousa': 3}, 'player_count': 11}, 'SLO': {'players': {'Grega Zemlja': 3, 'Blaz Kavcic': 10, 'Aljaz Bedene': 2, 'Blaz Rola': 2}, 'player_count': 17}, 'NED': {'players': {'Thiemo de Bakker': 2, 'Robin Haase': 9, 'Jesse Huta Galung': 1, 'Igor Sijsling': 2, 'Sjeng Schalken': 5, 'Peter Wessels': 2, 'Melle van Gemerden': 1, 'Raemon Sluiter': 4, 'Martin Verkerk': 1, 'Dennis Van Scheppingen': 1, 'John van Lottum': 1}, 'player_count': 29}, 'URU': {'players': {'Pablo Cuevas': 2}, 'player_count': 2}, 'RSA': {'players': {'Kevin Anderson': 15, 'Rik de Voest': 1, 'Wayne Ferreira': 3, 'Wesley Moodie': 3}, 'player_count': 22}, 'LTU': {'players': {'Richard Berankis': 7}, 'player_count': 7}, 'JPN': {'players': {'Kei Nishikori': 17, 'Tatsuma Ito': 4, 'Go Soeda': 4, 'Takao Suzuki': 2}, 'player_count': 27}, 'BUL': {'players': {'Grigor Dimitrov': 10}, 'player_count': 10}, 'IND': {'players': {'Somdev Devvarman': 4}, 'player_count': 4}, 'EST': {'players': {'Jurgen Zopp': 1}, 'player_count': 1}, 'THA': {'players': {'Danai Udomchoke': 5, 'Paradorn Srichaphan': 8}, 'player_count': 13}, 'DEN': {'players': {'Frederik Nielsen': 1, 'Kenneth Carlsen': 3, 'Kristian Pless': 1}, 'player_count': 5}, 'CHN': {'players': {'Di Wu': 2, 'Ze Zhang': 1}, 'player_count': 3}, 'MAR': {'players': {'Hicham Arazi': 5, 'Younes El Aynaoui': 1}, 'player_count': 6}, 'ARM': {'players': {'Sargis Sargsian': 4}, 'player_count': 4}, 'MON': {'players': {'Jean-Rene Lisnard': 5}, 'player_count': 5}, 'GEO': {'players': {'Irakli Labadze': 2}, 'player_count': 2}, 'KOR': {'players': {'Hyung-Taik Lee': 6}, 'player_count': 6}, 'BLR': {'players': {'Max Mirnyi': 7}, 'player_count': 7}, 'PER': {'players': {'Luis Horna': 7, 'Ivan Miranda': 1}, 'player_count': 8}, 'CRC': {'players': {'Juan-Antonio Marin': 1}, 'player_count': 1}, 'GRE': {'players': {'Konstantinos Economidis': 1}, 'player_count': 1}, 'ALG': {'players': {'Lamine Ouahab': 1}, 'player_count': 1}, 'PHI': {'players': {'Cecil Mamiit': 1}, 'player_count': 1}}
+
+
+    var select = document.getElementById("example-select");
+    select.onchange = function(){
+      country2 = select.options[select.selectedIndex].value;
+      console.log("Country2:",country2);
+      plot_bar_graph();
+    }
+    for(index in myobject) {
+        select.options[select.options.length] = new Option(index, index);
+    }
+
+    var color = d3.scale.category20();
+
+    var width = 960,
+        height = 500,
+        radius = Math.min(width, height) / 2;
+
+    
+
+    var arc = d3.svg.arc()
+        .outerRadius(radius - 20)
+        .innerRadius(radius - 120);
+
+    var pie = d3.layout.pie()
+        .sort(null)
+        .value(function(d) { return d.count; });
+
+    var svg = d3.select("#pie_chart")
+      .append("g")
+
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    var arcOver = d3.svg.arc()
+            .innerRadius(radius - 120)
+                .outerRadius(radius - 1);
+
+    var div = d3.select("body").append("div") 
+    .attr("class", "tooltip")       
+    .style("opacity", 0);
+
+    var selected;
+    function test(d, sel){       
+       if(!selected){
+         selected = this;
+         country1 = d.data.country;
+         console.log("Country1:",country1);
+         d3.select(this).transition()
+                     .duration(500)
+                     .attr("d", arcOver);
+         d3.select(selected).style('fill', function(d) { return color(d.data.country + 'B'); });
+         plot_bar_graph();
+      } 
+      else if(selected == this){
+        d3.select(this).transition()
+                     .duration(550)
+                     .attr("d", arc);
+         d3.select(selected).style('fill', function(d) { return color(d.data.country); });
+         var comparative_bar_chart = d3.select("#comparative_bar_chart");
+         comparative_bar_chart.selectAll("*").remove();
+         selected = undefined;
+
+      }
+    }
+
+    d3.csv("testing.csv", type, function(error, data) {
+      if (error) throw error;
+
+      var g = svg.selectAll(".arc")
+          .data(pie(data))
+        .enter().append("g")
+          .attr("class", "arc");
+
+      g.append("path")
+          .attr("d", arc)
+          .on("mouseover", function(d) {
+                  
+                  div.transition()    
+                      .duration(200)    
+                      .style("opacity", .9);
+                  div .html("No of times played:"+(d.data.count) + "<br/>" )  
+                      .style("left", (d3.event.pageX) + "px")   
+                      .style("top", (d3.event.pageY - 28) + "px");
+                 })
+          .on("mouseout", function(d) {
+                  // d3.select(this).transition()
+                  //    .duration(550)
+                  //    .attr("d", arc);
+                  div.transition()    
+                .duration(500)    
+                .style("opacity", 0); 
+                 })
+          .on("click", test)
+          .style("fill", function(d) { return color(d.data.country); });
+
+
+      g.append("text")
+          .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+          .attr("dy", ".35em")
+          .text(function(d) { return d.data.country; });
+    });
+
+    function type(d) {
+      d.count = +d.count;
+      return d;
+  }
+
+  function plot_bar_graph(){
+
+
+    var comparative_bar_chart = d3.select("#comparative_bar_chart");
+    comparative_bar_chart.selectAll("*").remove();     
+    var margin_bar = {top: 20, right: 20, bottom: 30, left: 40};
+    var width_bar = +comparative_bar_chart.attr("width") - margin_bar.left - margin_bar.right;
+    var height_bar = +comparative_bar_chart.attr("height") - margin_bar.top - margin_bar.bottom;
+    s = comparative_bar_chart.append("g").attr("transform", "translate(" + margin_bar.left + "," + margin_bar.top + ")");
+
+    var x0 = d3.scaleBand()
+    .rangeRound([0, width_bar])
+    .paddingInner(0.1);
+
+    var x1 = d3.scaleBand()
+    .padding(0.05);
+
+    var y = d3.scaleLinear()
+    .rangeRound([height_bar, 0]);
+
+    var z = d3.scale.category20();
+    
+    d3.json("bar_graph_data.json", function(error, d) {
+    if (error) throw error;
+     
+    console.log(d.length);
+    // country1 = 'ESP';
+    // country2 = 'SUI';
+    data = [] 
+    for(var key in d){
+      temp = {};
+      temp['Year'] = parseInt(key);
+
+      temp[country1] = d[key]['aces'][country1]['average'];
+      temp[country2] = d[key]['aces'][country2]['average'];
+
+      data.push(temp);
+    }
+    // for(var i = 0; i < 5; i++){
+    //   temp = {};
+    //   temp['Year'] = 2009 + i;
+    //   temp[country1] = myobject[country1].player_count;
+    //   temp[country2] = myobject[country2].player_count;
+
+    //   data.push(temp);
+    // }
+
+    data.push(['Year', country1, country2]);
+
+      
+    // data = [
+    //     { Year: "2009", country1: 825, country2: 526 },
+    //     { Year: "2010", country1: 564, country2: 462 },
+    //     { Year: "2011", country1: 862, country2: 600 },
+    //     { Year: "2012", country1: 600, country2: 700 },
+    //     { Year: "2013", country1: 700, country2: 465 },
+    //     { Year: "2014", country1: 456, country2: 651 },
+    //     columns = ['Year', 'country1', 'country2'],
+    //   ];
+    
+    var keys = data[data.length -1].slice(1);
+
+    x0.domain(data.map(function(d) { return d.Year; }));
+    x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+    y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+
+    s.append("g")
+      .selectAll("g")
+      .data(data)
+      .enter().append("g")
+      .attr("transform", function(d) { return "translate(" + x0(d.Year) + ",0)"; })
+      .selectAll("rect")
+      .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+      .enter().append("rect")
+      .attr("x", function(d) { return x1(d.key); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("width", x1.bandwidth())
+      .attr("height", function(d) { return height_bar - y(d.value); })
+      .attr("fill", function(d) { return color(d.key); })
+      .on("mouseover", function(d){ console.log("hi")});
+
+    s.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height_bar + ")")
+      .call(d3.axisBottom(x0));
+
+    s.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+      .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("aces");
+
+    var legend = s.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+      .selectAll("g")
+      .data(keys.slice().reverse())
+      .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+    legend.append("rect")
+      .attr("x", width_bar - 19)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", color);
+
+    legend.append("text")
+      .attr("x", width_bar - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
+      .text(function(d) { return d; });
+
+    })
+    
+  };
+
+  </script>
+
+
