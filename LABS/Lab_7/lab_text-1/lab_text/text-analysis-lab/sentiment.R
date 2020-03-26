@@ -1,9 +1,10 @@
 library(plyr)
 library(stringr)
 
-pos.words = scan('D:/sem 6/DV/LABS/Lab_7/lab_text-1/lab_text/text-analysis-lab/opinion-lexicon-English/positive-words.txt', what='character', comment.char=';')
-neg.words = scan('D:/sem 6/DV/LABS/Lab_7/lab_text-1/lab_text/text-analysis-lab/opinion-lexicon-English/negative-words.txt', what='character', comment.char=';')
-tennis.sentiment = score.sentiment(sample.tennis, pos.words, neg.words) 
+pos.words = scan('D:/sem 6/data_visualization/LABS/Lab_7/lab_text-1/lab_text/text-analysis-lab/opinion-lexicon-English/positive-words.txt', what='character', comment.char=';')
+neg.words = scan('D:/sem 6/data_visualization/LABS/Lab_7/lab_text-1/lab_text/text-analysis-lab/opinion-lexicon-English/negative-words.txt', what='character', comment.char=';')
+trump.debate <- read.delim("D:/sem 6/data_visualization/LABS/Lab_7/lab_text-1/lab_text/trump_debate.txt")
+tennis.sentiment = score.sentiment(trump_debate.txt, pos.words, neg.words) 
 tennis.sentiment$score
 
 score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
@@ -45,3 +46,4 @@ score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
   scores.df = data.frame(score=scores, text=sentences)
   return(scores.df)
 }
+

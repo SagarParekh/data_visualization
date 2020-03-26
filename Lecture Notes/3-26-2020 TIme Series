@@ -1,0 +1,70 @@
+Time Series Vizualization
+
+Interactive line chart of live updates
+-We can plot various data plots so that we can predict 
+-If we make it as a predictive models, it can works as well
+-We can see mapviews,emojis, etc so we cna aggregate time attributes with other things
+-The time spectrum can be used and manipulated to use it for other things
+
+Organize time data with time attribute
+- Artifacts in museums are organised by time
+- Can incorporate different multivariate data and overlap it.
+
+Series Data:
+- Sets of values changing over time
+- May have an internal structure : hoping to extract some semantic changes
+	- correlation
+	- trend
+	- seasonal variation
+- eg When looking at the computer CPU Utilizations over the period of particular time
+	- If you have multiple cpus it becomes very confusing because it becomes very messy. It is very hard to compare point by point. Well you can make it interactive to manage the comparisons easily.
+
+Larger Database
+- This shows us that it becomes chalenging if the data set increases highly.
+- Can use small multiples technique
+
+Principles:
+- Familiar visual representations should be preserved when appropriate
+- Side by side comparison of small multiple views is easier that remembering previous seen views
+- Overview first, 
+- SPatial position is the strongest perceptual cue
+- Multiple views are most effective when coordinated throught explicit linking
+- Avoid abrupt visual changes
+- User actions 
+
+Why does the discussion matter with time?
+- Can uncover a lot of different semantics
+- Evidence gathering for detectives and keep a track of the timeline 
+
+
+Topic Evolution Analysis:
+- observe the evolution and flow of knowledge in collaboration
+- Topic models to summarise a lot of text in semantics
+
+VISA: A visual sentiment analysis system
+- Test summarization techniques
+
+Summary:
+- visualizing collections of observed events by time
+- visualizing observed events that are qualified, classified, examined for possible relations with other facts
+	- eg: Behavior Modeling:
+		- when: temporal locus
+		- how long: temporal extent
+		- how many times: repeatability
+		- intensity: etc
+
+Behavior changes:
+- event series over time
+- properties of behavior changes
+	- level
+	- trend
+	- variability
+- Time modeling allowed us to observe the behaviour
+
+How to visualiza the Changes over time: by seeing the differences
+- magnitude of change: 
+- shape of change: 
+- velocity of change: how fast are the changes, use interactions/animations
+- direction of change: utilize the colors to highlight it
+
+

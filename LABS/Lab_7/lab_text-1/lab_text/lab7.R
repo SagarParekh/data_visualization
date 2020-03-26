@@ -47,7 +47,7 @@ wordcloud(myCorpus,  min.freq=25, color=brewer.pal(6, "Dark2")  )
 wordcloud(myCorpus, colors=brewer.pal(5,"Set1"),random.order=FALSE, max.words=50)
 
 # trump debate data wordcloud after text processing
-text <- read.delim("D:/sem 6/DV/LABS/Lab_7/lab_text-1/lab_text/trump_debate.txt", sep = "\n")
+text <- read.delim("D:/sem 6/data_visualization/LABS/Lab_7/lab_text-1/lab_text/trump_debate.txt", sep = "\n")
 text
 corp_don <- VCorpus(VectorSource(text), readerControl = list(language = "en"))
 summary(corp_don)
@@ -84,7 +84,7 @@ wordcloud(names(cloud.data), freq = cloud.data, scale = c(4, 0.1), min.freq = 1,
           rot.per = 0, random.order = FALSE,colors=brewer.pal(5,"Set1"))
 
 #clinton debate data wordcloud after text processing
-text_hil <- read.delim("D:/sem 6/DV/LABS/Lab_7/lab_text-1/lab_text/clinton_debate.txt", sep = "\t")
+text_hil <- read.delim("D:/sem 6/data_visualization/LABS/Lab_7/lab_text-1/lab_text/clinton_debate.txt", sep = "\t")
 text_hil
 corp_hil <- VCorpus(VectorSource(text), readerControl = list(language = "en"))
 summary(corp_hil)
