@@ -95,3 +95,49 @@ Topic Modeling:
 - Topic Facet Modeling: 
 
 
+Text Viz Lecture 2:
+
+Converte unstructured data to structured data
+- Term Document Matrix
+- Term -> a single word, could be a phrase "data visualization"
+- Document -> A collection of texts
+- Each cell (i,j): number of term(i) in document(j)
+	- can be binary or count (frequencies)
+
+Engineer Features:
+- find out, design the features for out textual content.
+-Terms as features
+	- Bag of words mechanism: only meaningful words of the content. These set of words are features.
+	- n-grams (n consecutive words): contiguous sequence of n items from a given sample of text
+
+- Re-weighting Features:	
+	- not every word have the same weight, meaning, importance. The adjectives becomes importance in these cases.
+	- If a term occurs more frequently in many documnets it has less discriminatory power.
+	- Term importance = term frequency (TF) x inverse-documnet frequency (IDF)
+
+Vector Space Model: 
+- Represent each document by a high dimensional vector in the space of words. Count total number of words in each document.
+- Bag of words counts each word's frequency in the document. It does not present the semantics.
+
+Topic Modeling:
+- The vector representation does not capture semantic relations between words
+- words <-> 
+- The summary shows the semantics. The distribution does this.
+- Now we have the numbers of frquency of each word. Next step is viz.
+
+What to Visualize?
+- Sinlge Document: 
+- Collection of Documents
+- Extended attribute of Documents
+
+- The vocabulary based viz. 
+- Semantic Structure: 
+	- IS-A relation
+	- it always carries relations, can represent using netowrk or relations.
+	- Subject - verb - object triplets  
+- Theme based visualization:
+	- Trend based collection
+- Visualize Document Relations: how you relate to other documents or with words within the same document.
+	- Our goal is to build the features
+	- Disease, symptoms,treatments are all a bag of words.
+

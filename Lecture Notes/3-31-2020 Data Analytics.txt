@@ -1,0 +1,68 @@
+3-31-2020 Data Analytics
+
+The size of data storeage has considerably reduced with the growth of technology.
+
+IBM posted that every day 2.5 quintllion amount of data is generated. This is equal to 10 million blue-ray discs.
+
+The Decoy Effect
+they surveyed 100 students and asked if they would like to sign up for web subscription ($59) or if print subscription ($125) or both ($125). Then 84% of students opted for both.
+
+When the only print option was removed the price became the main factor. SO many students got back to only web subscription. 68% students opted for web subscription
+
+Volume, Velocity, Variety, Veracity:
+Volume - Data at rest. 
+Velocity - Data in Motion. Streaming data, milliseconds to seconds to respond.
+Variety - Data in many forms. Structured , unstructured, text, multimedia etc. 
+Veracity: Data in doubt. How to verify that all data are quality data.
+
+What is the big Deal?
+Increasing data availability
+increasing data scientists ( or more like enthusiasts)
+Improving computing power and services
+
+Way more interactions (data) from www:
+- youtube has 4 billions of views/day
+- 1 hour of video is uploaded every second
+- FB has 483 million daily active users (2011)
+- Google yeilded > 1 billion searches per day (2011)
+- 
+
+
+More Changes means more opportunities
+- No formula for all problems yet
+- Evolving technology
+- SO many tools
+- Different computational models
+
+Challenges:
+- Excel cant load the data or handle the huge data
+- Commercial databases are too slow. The traditional databases have limitations. 
+
+New infrastructural technologies:
+- Computing paradigm is shifting: Cloud, Hadoop-MapReduce
+
+- Storage solutuons: NoSQL . 
+	- In traditional SQL it stores data in data tables. THe keys are used to manage tables. Tables are joined etc.
+	- A NoSQL database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases.
+	- Data consistency is difficult to manage in NoSQL
+	- Pros: 
+		- scalable and fast
+		- flexible
+		- can be easier for experienced programmers
+	-Cons:
+		- fewer consistency/ concurrency guarantees
+		- weaker set of queries supported
+		- less mature
+
+- Languages: Pig, SPARQL
+	- Pig is a high level scripting language that is used with Apache Hadoop. Pig enables data workers to write complex data transformations without knowing Java. Pig's simple SQL-like scripting language is called Pig Latin, and appeals to developers already familiar with scripting languages and SQL.
+	- SPARQL (pronounced "sparkle", a recursive acronym for SPARQL Protocol and RDF Query Language) is an RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework (RDF) format.
+
+MapReduce:
+MapReduce is a processing technique and a program model for distributed computing based on java. The MapReduce algorithm contains two important tasks, namely Map and Reduce. Map takes a set of data and converts it into another set of data, where individual elements are broken down into tuples (key/value pairs).
+
+Some data intensive and non intensive approach:
+- Ignore the data, use experts instead; assumes no large subscriber reviewer divergence
+- Use all data but ignore individual preference; assumes that most users are close to the average
+- Lump people into preference groups based on shared likes/dislikes; compute group-based average score per movie
+- Focus comutational effor on difficult movies
