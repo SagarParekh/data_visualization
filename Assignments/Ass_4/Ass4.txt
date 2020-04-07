@@ -1,0 +1,50 @@
+A) Overtime worldwide line chart
+Strengths:
+i) The thickness of line of each country is directly correlated to the number of cases.
+ii) Have references for how soon the deaths doubled in a country. Different reference slopes are given like: doubles every day, doubles every 2nd day, doubles every 3rd day, doubles every week and doubles every month.
+
+Weaknesses:
+i) All the lines are coloured in a different color. 
+ii) The chart stops at day 45 , but more than 60 days have passed since China's 10 reported death.
+iii) Since there are so many cases worldwide now, there should be more reference line for when the cases doubled in 4 days and 5 days
+iv) The y-axis intervals should be increasing by a factor of 10^2, because of the high number of cases worldwide. The first interval can be 100th case.
+
+
+What I would change?
+i) Make color groups of different countries. Say countries above 100k cases are shown in red color, countries over 10k cases are  shown in yellow color and all other countries under 10k cases in blue color. This would make is more pleasant to see and easier to understand which group a country belongs to.
+ii) Make the graph more cleaner. Each line is named at a different place, what i would do is name all the lines in the end. Like at the current value. So all the lines are named in a single fashion.
+iii) The visualization only shows the number of deaths in a country right now. We can add a dropdown menu to select either number of cases or number of deaths. This would help us to see the rate at which the cases are increasing.
+
+B) Cases & deaths bar charts by country
+Strengths:
+i) Easier to see the comparison between the number of confirmed cases and number of deaths. It gives an insight to the mortality rate.
+ii) The exact number of cases are visible on hover.
+iii) The exact numbers which are visible on hover are in contrast color to the color of the bar.
+
+Weaknesses:
+i) It is difficult to get an exact for even an estimation of number of people affected , died or recovered in this graph because the intervals are of 50k.
+ii) In some countries where the cases are less than 10k the deaths are significantly less. So the deaths are represented as a thin black line which is difficult to see with the naked eye. This is also because blue and black are both dark colors. If two contrast colors are selected this might have not been the case.
+iii) It could be confusing to read stacked bar graph for some people because comparing the different segments is difficunt since they are not aligned on a common baseline.
+iv) No data for recoveries in USA?
+
+What i would do differently?
+i) Make an interactive visualization. Have a drop down menu which gives 3 options: Confirmed Cases, Deaths, Recoveries. On selecting any option it will display a simple horizontal bar graph for different countries. The exact count of all the countries will be displayed on their respective bars. 
+ii) I would also add another bar chart for cases per million people. This would help us compare the effect in countries with different population and area.
+
+C) Confirmed & recovered cases map charts by country
+
+Strengths:
+i) Geospatial visualization gives the ability to compare the activity across several locations at a glance
+ii) The size of the cluster shows how deeply an area is affected. By comparing size of the clusters of different states we can compare how affected 
+
+Weaknesses:
+i) No zoom in and zoom out button.
+ii) The size of the cluster depends on the number of cases in the area. So if some area is highly affected then it might overlap other smaller clusters next to it. 
+iii) There are clusters for deaths as well. These clusters are inside the clusters of the number of cases in the same area. Since the colors are blue and black the black clusters are difficult to see.
+iv) On hover, the details are displayed. Hovering over the blue cluster displays number of affected people, now you have to exactly hover over the small black cluster inside to see the number of deaths.
+v) The granularity of the dot map is state vise however a county wise granularity would be better for comparison within a state.
+
+What I would change?
+i) Add a zoom in and zoom out button
+ii) Keep a common cluster for confirmed cases and deaths. On hover you can see the total confirmed cases, total deaths, total recovered patients and active cases.
+iii) In areas where there are multiple overlapping clusters on clicking any one of the clusters display a menu which shows the info about the biggest cluster amongst them and a left right arrow option which user can use to see information other clusters. 

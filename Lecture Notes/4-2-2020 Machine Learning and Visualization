@@ -1,0 +1,47 @@
+4/2/2020 Machine Learning and Visualization
+
+What is regression?
+- In statistical modeling, regression analysis is a set of statistical processes for estimating the relationships between a dependent variable and one or more independent variables. 
+- The most common form of regression analysis is linear regression, in which a researcher finds the line (or a more complex linear combination) that most closely fits the data according to a specific mathematical criterion. For example, the method of ordinary least squares computes the unique line (or hyperplane) that minimizes the sum of squared distances between the true data and that line (or hyperplane).
+
+Machine Learning
+- perform many typs of tasks based on many types of experiences
+- Abstraction , Automation, Algorithm
+
+Model
+- Train the model by building a program with enough experience ( by passing a lot of input to produce outputs)
+ - It could be data intensive or not data intensive
+ - training and testing phases
+
+ Feature Engineering vs Dimension Reduction
+ - Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data. Feature engineering turn your inputs into things the algorithm can understand.
+ - In statistics, machine learning, and information theory, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration by obtaining a set of principal variables. Approaches can be divided into feature selection and feature extraction.
+
+ Dimension Reduction and Clustering:
+ - Generalizability: less likely to overfit
+ - Feature selection or linear methods such as PCA the reduction will promote the most important variables and which will improve the interpretability of your model
+ - Can be helpful for a lot of unlabeled data because labeling is time consuming and expensive
+- PCA is used to reduce dimensionality
+
+Image Mining:
+- By definition, image mining deals with the extraction of image patterns from a large collection of images. ... In image mining, the goal is the discovery of image patterns that are significant in a given collection of images.
+- 
+
+Why? ML and DM?
+
+How ML can help DV?
+- Discover unknown patterns between data attributes
+- Identify irrelevant dimensions or features
+- Reduce massive data to small set of coherent clusters
+- Embeded high dimensional data in two or three dimensions for easy viz
+
+How Data Science help DV?
+- Observe the world
+- Develop models that matches observations
+- Teach the computer to learn these models
+
+When to use what?
+- Prediction models: classification, regression, ...
+- Structure discovering: clustering,...
+- Relationship mining: association rules, correlations, ...
+
