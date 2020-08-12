@@ -4,5 +4,5 @@ How to Run:
 	Place the tennis folder inside:
 		Tomcat -> webapps -> ROOT 
 
-	Open the browser and type : http://localhost:8080/tennis/AustralianOpenInteractiveViz.html
+	Open the browser and type : http://localhost:8080/project/AustralianOpenInteractiveViz.html
 	(8080 here is the port assigned to localhost)
